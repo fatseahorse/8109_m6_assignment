@@ -4,7 +4,7 @@ require('dotenv').config();  // put the variables in the .env file into process.
 const cors = require('cors');
 const { connect } = require("./db");
 const { ObjectId } = require('mongodb');
-const { ai, generateSearchParams, generateRecipe } = require('./gemini');
+//const { ai, generateSearchParams, generateRecipe } = require('./gemini');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const { verifyToken } = require("./middlewares")
