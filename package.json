@@ -19,6 +19,7 @@
   },
   "homepage": "https://github.com/fatseahorse/8109_m6_assignment#readme",
   "dependencies": {
+    "@google/genai": "^2.10.0",
     "bcrypt": "^6.0.0",
     "cors": "^2.8.6",
     "dotenv": "^17.4.2",

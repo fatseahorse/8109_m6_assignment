@@ -4,7 +4,7 @@ require('dotenv').config();  // put the variables in the .env file into process.
 const cors = require('cors');
 const { connect } = require("./db");
 const { ObjectId } = require('mongodb');
-//const { ai, generateSearchParams, generateRecipe } = require('./gemini');
+const { ai, generateSearchParams, generateRecipe } = require('./gemini');
 const bcrypt = require('bcrypt');
 const jwt = require('jsonwebtoken');
 const { verifyToken } = require("./middlewares")
@@ -378,7 +378,7 @@ async function main() {
     // register router
     // sample request body
     // {
-    //    "email":"tanahkow@gemail.com",
+    //    "email":"test@gmail.com",
     //    "password": "rotiprata123"
     // }
     app.post('/users', async function (req, res) {
@@ -396,7 +396,7 @@ async function main() {
 
     // sample POST body
     // {
-    //   "email":"tanahkow@gemail.com",
+    //   "email":"test@gmail.com",
     //   "password":"rotiprata123"
     // }
     app.post('/login', async function (req, res) {
