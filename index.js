@@ -136,15 +136,9 @@ async function main() {
             }
         }
 
-        // simple search - must be exact match and is case sensitive
-        // if (ingredients) {
-        //     critera["ingredients.name"] = {
-        //         $all: ingredients.split(",")
-        //     }
-        // }
-
         // advanced search: use $all with regular expressions
         if (ingredients) {
+
             // traditional way of using for...loop
             // const ingredientArray = ingredients.split(",");
             // const regularExpressionArray = [];
@@ -152,11 +146,6 @@ async function main() {
             //     regularExpressionArray.push(new RegExp(ingredient, 'i'));
             // }
 
-            // modern way: use .map
-            // const ingredientArray = ingredients.split(",");
-            // const regularExpressionArray = ingredientArray.map(function(ingredient){
-            //     return new RegExp(ingredient, 'i')
-            // })
 
             // using arrow function:
             const regularExpressionArray = ingredients.split(",").map(
@@ -190,6 +179,7 @@ async function main() {
 
     // tags: ["quick", "easy", "vegetarian"]
     app.post('/recipes', verifyToken, async function (req, res) {
+
         // extract out the various components of the recipe document from req.body
         // const name = req.body.name;
         // const cuisine = req.body.cuisine;
@@ -394,11 +384,6 @@ async function main() {
         })
     })
 
-    // sample POST body
-    // {
-    //   "email":"test@gmail.com",
-    //   "password":"rotiprata123"
-    // }
     app.post('/login', async function (req, res) {
         const { email, password } = req.body;
         const user = await db.collection("users").findOne({
